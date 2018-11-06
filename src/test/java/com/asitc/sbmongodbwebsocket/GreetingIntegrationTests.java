@@ -66,7 +66,7 @@ public class GreetingIntegrationTests {
 
             @Override
             public void afterConnected(final StompSession session, StompHeaders connectedHeaders) {
-                session.subscribe("/topic/greetings", new StompFrameHandler() {
+                session.subscribe("/topic/greetings/Alberto", new StompFrameHandler() {
                     @Override
                     public Type getPayloadType(StompHeaders headers) {
                         return Greeting.class;
@@ -86,7 +86,7 @@ public class GreetingIntegrationTests {
                     }
                 });
                 try {
-                    session.send("/app/hello", new HelloMessage("Alberto"));
+                    session.send("/app/hello", new HelloMessage("Alberto", "Alberto"));
                 } catch (Throwable t) {
                     failure.set(t);
                     latch.countDown();

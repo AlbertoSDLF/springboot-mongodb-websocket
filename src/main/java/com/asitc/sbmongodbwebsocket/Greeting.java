@@ -16,7 +16,7 @@ public class Greeting {
     private String content;
     
     public static Greeting getForHelloMessage(final HelloMessage message) {
-    	return new Greeting(String.format("Hello, %s!", HtmlUtils.htmlEscape(message.getName())));
+    	return new Greeting(String.format("Hello, %s!", HtmlUtils.htmlEscape(message.getReceiver())));
     }
 
 }

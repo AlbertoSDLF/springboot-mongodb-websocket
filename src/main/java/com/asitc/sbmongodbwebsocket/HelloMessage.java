@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class HelloMessage {
 
-    private String name;
+    private String receiver;
+    private String sender;
 
 }

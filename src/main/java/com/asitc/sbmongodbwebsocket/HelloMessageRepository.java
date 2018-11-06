@@ -8,6 +8,8 @@ import reactor.core.publisher.Flux;
 public interface HelloMessageRepository extends ReactiveMongoRepository<HelloMessage, String> {
 
 	  @Tailable
-	  Flux<HelloMessage> findByName(String name);
+	  Flux<HelloMessage> findBy();
+	  @Tailable
+	  Flux<HelloMessage> findByReceiver(String receiver);
 
 }
